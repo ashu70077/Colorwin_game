@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ColorWin Game</title>
+  <style>
+    body { font-family: Arial; text-align: center; margin-top: 50px; }
+    .color-btn { padding: 20px; margin: 10px; font-size: 20px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h1>Color Prediction Game</h1>
+  <button class="color-btn" style="background-color: red;" onclick="predict('Red')">Red</button>
+  <button class="color-btn" style="background-color: green;" onclick="predict('Green')">Green</button>
+  <button class="color-btn" style="background-color: violet;" onclick="predict('Violet')">Violet</button>
+  <h2 id="result"></h2>
+  <script>
+    function predict(choice) {
+      const colors = ['Red', 'Green', 'Violet'];
+      const result = colors[Math.floor(Math.random() * colors.length)];
+      document.getElementById('result').innerText =
+        'You chose: ' + choice + '\nResult: ' + result + (choice === result ? ' (You Win!)' : ' (You Lose!)');
+    }
+  </script>
+</body>
+</html>
